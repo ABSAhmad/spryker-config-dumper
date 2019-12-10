@@ -1,0 +1,26 @@
+namespace: Cariboui
+actor: Tester
+
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+
+coverage:
+    enabled: true
+    whitelist:
+        include:
+            - 'src/*'
+suites:
+    Communication:
+        path: Communication
+        class_name: ConfigDumpCommunicationTester
+        modules:
+            enabled:
+                - Asserts
+                - \SprykerTest\Shared\Testify\Helper\Environment
+                - \SprykerTest\Shared\Testify\Helper\ConfigHelper
+                - \SprykerTest\Shared\Testify\Helper\LocatorHelper
+                - \SprykerTest\Shared\Testify\Helper\DependencyHelper
